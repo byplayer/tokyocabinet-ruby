@@ -2,8 +2,8 @@ require 'rubygems'
 
 spec = Gem::Specification.new do |s|
   s.name = "tokyocabinet"
-  s.version = "1.31"
-  s.author "FAL Labs"
+  s.version = "1.31.a"
+  s.author = "FAL Labs"
   s.email = "info@fallabs.com"
   s.homepage = "http://fallabs.com/tokyocabinet/"
   s.summary = "Tokyo Cabinet: a modern implementation of DBM."
@@ -11,9 +11,4 @@ spec = Gem::Specification.new do |s|
   s.files = [ "tokyocabinet.c", "extconf.rb" ]
   s.require_path = "."
   s.extensions = [ "extconf.rb" ]
-end
-
-if $0 == __FILE__
-  Gem::manage_gems
-  Gem::Builder.new(spec).build
 end

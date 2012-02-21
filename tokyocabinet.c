@@ -951,7 +951,7 @@ static VALUE hdb_each(VALUE vself){
   VALUE vhdb, vrv;
   TCHDB *hdb;
   TCXSTR *kxstr, *vxstr;
-  if(rb_block_given_p() != Qtrue) rb_raise(rb_eArgError, "no block given");
+  if(!rb_block_given_p()) rb_raise(rb_eArgError, "no block given");
   vhdb = rb_iv_get(vself, HDBVNDATA);
   Data_Get_Struct(vhdb, TCHDB, hdb);
   vrv = Qnil;
@@ -972,7 +972,7 @@ static VALUE hdb_each_key(VALUE vself){
   VALUE vhdb, vrv;
   TCHDB *hdb;
   TCXSTR *kxstr, *vxstr;
-  if(rb_block_given_p() != Qtrue) rb_raise(rb_eArgError, "no block given");
+  if(!rb_block_given_p()) rb_raise(rb_eArgError, "no block given");
   vhdb = rb_iv_get(vself, HDBVNDATA);
   Data_Get_Struct(vhdb, TCHDB, hdb);
   vrv = Qnil;
@@ -992,7 +992,7 @@ static VALUE hdb_each_value(VALUE vself){
   VALUE vhdb, vrv;
   TCHDB *hdb;
   TCXSTR *kxstr, *vxstr;
-  if(rb_block_given_p() != Qtrue) rb_raise(rb_eArgError, "no block given");
+  if(!rb_block_given_p()) rb_raise(rb_eArgError, "no block given");
   vhdb = rb_iv_get(vself, HDBVNDATA);
   Data_Get_Struct(vhdb, TCHDB, hdb);
   vrv = Qnil;
@@ -1697,7 +1697,7 @@ static VALUE bdb_each(VALUE vself){
   TCBDB *bdb;
   BDBCUR *cur;
   TCXSTR *kxstr, *vxstr;
-  if(rb_block_given_p() != Qtrue) rb_raise(rb_eArgError, "no block given");
+  if(!rb_block_given_p()) rb_raise(rb_eArgError, "no block given");
   vbdb = rb_iv_get(vself, BDBVNDATA);
   Data_Get_Struct(vbdb, TCBDB, bdb);
   vrv = Qnil;
@@ -1723,7 +1723,7 @@ static VALUE bdb_each_key(VALUE vself){
   BDBCUR *cur;
   const char *kbuf;
   int ksiz;
-  if(rb_block_given_p() != Qtrue) rb_raise(rb_eArgError, "no block given");
+  if(!rb_block_given_p()) rb_raise(rb_eArgError, "no block given");
   vbdb = rb_iv_get(vself, BDBVNDATA);
   Data_Get_Struct(vbdb, TCBDB, bdb);
   vrv = Qnil;
@@ -1744,7 +1744,7 @@ static VALUE bdb_each_value(VALUE vself){
   BDBCUR *cur;
   const char *vbuf;
   int vsiz;
-  if(rb_block_given_p() != Qtrue) rb_raise(rb_eArgError, "no block given");
+  if(!rb_block_given_p()) rb_raise(rb_eArgError, "no block given");
   vbdb = rb_iv_get(vself, BDBVNDATA);
   Data_Get_Struct(vbdb, TCBDB, bdb);
   vrv = Qnil;
@@ -2413,7 +2413,7 @@ static VALUE fdb_each(VALUE vself){
   char *vbuf, kbuf[NUMBUFSIZ];
   int vsiz, ksiz;
   uint64_t id;
-  if(rb_block_given_p() != Qtrue) rb_raise(rb_eArgError, "no block given");
+  if(!rb_block_given_p()) rb_raise(rb_eArgError, "no block given");
   vfdb = rb_iv_get(vself, FDBVNDATA);
   Data_Get_Struct(vfdb, TCFDB, fdb);
   vrv = Qnil;
@@ -2436,7 +2436,7 @@ static VALUE fdb_each_key(VALUE vself){
   char kbuf[NUMBUFSIZ];
   int ksiz;
   uint64_t id;
-  if(rb_block_given_p() != Qtrue) rb_raise(rb_eArgError, "no block given");
+  if(!rb_block_given_p()) rb_raise(rb_eArgError, "no block given");
   vfdb = rb_iv_get(vself, FDBVNDATA);
   Data_Get_Struct(vfdb, TCFDB, fdb);
   vrv = Qnil;
@@ -2455,7 +2455,7 @@ static VALUE fdb_each_value(VALUE vself){
   char *vbuf;
   int vsiz;
   uint64_t id;
-  if(rb_block_given_p() != Qtrue) rb_raise(rb_eArgError, "no block given");
+  if(!rb_block_given_p()) rb_raise(rb_eArgError, "no block given");
   vfdb = rb_iv_get(vself, FDBVNDATA);
   Data_Get_Struct(vfdb, TCFDB, fdb);
   vrv = Qnil;
@@ -3024,7 +3024,7 @@ static VALUE tdb_each(VALUE vself){
   TCMAP *cols;
   char *kbuf;
   int ksiz;
-  if(rb_block_given_p() != Qtrue) rb_raise(rb_eArgError, "no block given");
+  if(!rb_block_given_p()) rb_raise(rb_eArgError, "no block given");
   vtdb = rb_iv_get(vself, TDBVNDATA);
   Data_Get_Struct(vtdb, TCTDB, tdb);
   vrv = Qnil;
@@ -3045,7 +3045,7 @@ static VALUE tdb_each_key(VALUE vself){
   TCTDB *tdb;
   char *kbuf;
   int ksiz;
-  if(rb_block_given_p() != Qtrue) rb_raise(rb_eArgError, "no block given");
+  if(!rb_block_given_p()) rb_raise(rb_eArgError, "no block given");
   vtdb = rb_iv_get(vself, TDBVNDATA);
   Data_Get_Struct(vtdb, TCTDB, tdb);
   vrv = Qnil;
@@ -3064,7 +3064,7 @@ static VALUE tdb_each_value(VALUE vself){
   TCMAP *cols;
   char *kbuf;
   int ksiz;
-  if(rb_block_given_p() != Qtrue) rb_raise(rb_eArgError, "no block given");
+  if(!rb_block_given_p()) rb_raise(rb_eArgError, "no block given");
   vtdb = rb_iv_get(vself, TDBVNDATA);
   Data_Get_Struct(vtdb, TCTDB, tdb);
   vrv = Qnil;
@@ -3274,7 +3274,7 @@ static VALUE tdbqry_searchout(VALUE vself){
 static VALUE tdbqry_proc(VALUE vself, VALUE vproc){
   VALUE vqry;
   TDBQRY *qry;
-  if(rb_block_given_p() != Qtrue) rb_raise(rb_eArgError, "no block given");
+  if(!rb_block_given_p()) rb_raise(rb_eArgError, "no block given");
   vqry = rb_iv_get(vself, TDBQRYVNDATA);
   Data_Get_Struct(vqry, TDBQRY, qry);
   return tctdbqryproc(qry, (TDBQRYPROC)tdbqry_procrec, NULL) ? Qtrue : Qfalse;
@@ -3793,7 +3793,7 @@ static VALUE adb_each(VALUE vself){
   TCADB *adb;
   char *tkbuf, *tvbuf;
   int tksiz, tvsiz;
-  if(rb_block_given_p() != Qtrue) rb_raise(rb_eArgError, "no block given");
+  if(!rb_block_given_p()) rb_raise(rb_eArgError, "no block given");
   vadb = rb_iv_get(vself, ADBVNDATA);
   Data_Get_Struct(vadb, TCADB, adb);
   vrv = Qnil;
@@ -3815,7 +3815,7 @@ static VALUE adb_each_key(VALUE vself){
   TCADB *adb;
   char *tkbuf;
   int tksiz;
-  if(rb_block_given_p() != Qtrue) rb_raise(rb_eArgError, "no block given");
+  if(!rb_block_given_p()) rb_raise(rb_eArgError, "no block given");
   vadb = rb_iv_get(vself, ADBVNDATA);
   Data_Get_Struct(vadb, TCADB, adb);
   vrv = Qnil;
@@ -3833,7 +3833,7 @@ static VALUE adb_each_value(VALUE vself){
   TCADB *adb;
   char *tkbuf, *tvbuf;
   int tksiz, tvsiz;
-  if(rb_block_given_p() != Qtrue) rb_raise(rb_eArgError, "no block given");
+  if(!rb_block_given_p()) rb_raise(rb_eArgError, "no block given");
   vadb = rb_iv_get(vself, ADBVNDATA);
   Data_Get_Struct(vadb, TCADB, adb);
   vrv = Qnil;
